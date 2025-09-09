@@ -1,5 +1,4 @@
 import transactionsData from "@/services/mockData/transactions.json";
-
 class TransactionService {
   constructor() {
     this.transactions = [...transactionsData];
@@ -70,7 +69,41 @@ class TransactionService {
         return transactionDate >= start && transactionDate <= end;
       })
       .map(t => ({ ...t }))
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
+.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+
+  // Export all transactions as CSV
+  async exportTransactionsCSV() {
+    await this.delay();
+    const { csvExportService } = await import('./csvExportService.js');
+    
+    try {
+      const transactions = await this.getAll();
+      const csvContent = csvExportService.generateTransactionCSV(transactions);
+      const filename = `transactions-export-${new Date().toISOString().split('T')[0]}.csv`;
+      
+      csvExportService.downloadCSV(csvContent, filename);
+      return { success: true, message: 'Transactions exported successfully' };
+    } catch (error) {
+      throw new Error('Failed to export transactions: ' + error.message);
+    }
+  }
+
+  // Export financial summary report as CSV
+  async exportSummaryReportCSV() {
+    await this.delay();
+    const { csvExportService } = await import('./csvExportService.js');
+    
+    try {
+      const transactions = await this.getAll();
+      const csvContent = csvExportService.generateSummaryReportCSV(transactions);
+      const filename = `financial-summary-${new Date().toISOString().split('T')[0]}.csv`;
+      
+      csvExportService.downloadCSV(csvContent, filename);
+      return { success: true, message: 'Financial summary exported successfully' };
+    } catch (error) {
+      throw new Error('Failed to export summary report: ' + error.message);
+    }
   }
 }
 

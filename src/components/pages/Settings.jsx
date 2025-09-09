@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/atoms/Car
 import FormField from "@/components/molecules/FormField";
 import ApperIcon from "@/components/ApperIcon";
 import Loading from "@/components/ui/Loading";
+import { transactionService } from '@/services/api/transactionService';
 import Error from "@/components/ui/Error";
 import { categoryService } from "@/services/api/categoryService";
 
@@ -85,8 +86,37 @@ const Settings = () => {
     }
   };
 
-  const expenseCategories = categories.filter(cat => cat.type === "expense" || cat.type === "both");
+const expenseCategories = categories.filter(cat => cat.type === "expense" || cat.type === "both");
   const incomeCategories = categories.filter(cat => cat.type === "income" || cat.type === "both");
+
+  // Export functionality state
+  const [exportLoading, setExportLoading] = useState(false);
+
+  // Handle transaction export
+  const handleExportTransactions = async () => {
+    setExportLoading(true);
+    try {
+      const result = await transactionService.exportTransactionsCSV();
+      toast.success(result.message);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setExportLoading(false);
+    }
+  };
+
+  // Handle summary report export
+  const handleExportSummaryReport = async () => {
+    setExportLoading(true);
+    try {
+      const result = await transactionService.exportSummaryReportCSV();
+      toast.success(result.message);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setExportLoading(false);
+    }
+  };
 
   return (
     <div className="space-y-8">
@@ -95,6 +125,96 @@ const Settings = () => {
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Settings</h1>
         <p className="text-gray-600">Manage your categories and preferences</p>
       </div>
+
+      {/* Data Export Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <ApperIcon name="Download" className="w-5 h-5 text-primary-600" />
+            Data Export
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          <p className="text-gray-600">
+            Export your financial data in CSV format for use in spreadsheet applications or backup purposes.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Transaction Export */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <ApperIcon name="Receipt" className="w-4 h-4 text-gray-500" />
+                <h4 className="font-medium text-gray-900">Transaction Export</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                Export all your transactions with details including date, description, category, type, and amount.
+              </p>
+              <Button
+                onClick={handleExportTransactions}
+                disabled={exportLoading}
+                className="w-full"
+                variant="outline"
+              >
+                {exportLoading ? (
+                  <>
+                    <ApperIcon name="Loader2" className="w-4 h-4 mr-2 animate-spin" />
+                    Exporting...
+                  </>
+                ) : (
+                  <>
+                    <ApperIcon name="FileSpreadsheet" className="w-4 h-4 mr-2" />
+                    Export Transactions
+                  </>
+                )}
+              </Button>
+            </div>
+
+            {/* Summary Report Export */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <ApperIcon name="BarChart3" className="w-4 h-4 text-gray-500" />
+                <h4 className="font-medium text-gray-900">Financial Summary</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                Export a monthly financial summary with income, expenses, and net totals grouped by category.
+              </p>
+              <Button
+                onClick={handleExportSummaryReport}
+                disabled={exportLoading}
+                className="w-full"
+                variant="outline"
+              >
+                {exportLoading ? (
+                  <>
+                    <ApperIcon name="Loader2" className="w-4 h-4 mr-2 animate-spin" />
+                    Generating...
+                  </>
+                ) : (
+                  <>
+                    <ApperIcon name="TrendingUp" className="w-4 h-4 mr-2" />
+                    Export Summary Report
+                  </>
+                )}
+              </Button>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="flex items-start gap-2">
+              <ApperIcon name="Info" className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+              <div className="text-sm">
+                <p className="font-medium text-blue-900 mb-1">Export Information</p>
+                <ul className="text-blue-700 space-y-1">
+                  <li>• CSV files can be opened in Excel, Google Sheets, or any spreadsheet application</li>
+                  <li>• Transaction exports include all recorded financial data</li>
+                  <li>• Summary reports provide monthly insights grouped by category</li>
+                  <li>• All currency amounts are formatted in USD</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Add Category */}
       <Card>
