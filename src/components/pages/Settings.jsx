@@ -20,8 +20,9 @@ const Settings = () => {
     icon: "Tag",
     type: "expense"
   });
-  const [isAddingCategory, setIsAddingCategory] = useState(false);
+const [isAddingCategory, setIsAddingCategory] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
+  const [exportLoading, setExportLoading] = useState(false);
 
   if (loading) return <Loading />;
   if (error) return <Error message={error} onRetry={refreshData} />;
@@ -89,8 +90,7 @@ const Settings = () => {
 const expenseCategories = categories.filter(cat => cat.type === "expense" || cat.type === "both");
   const incomeCategories = categories.filter(cat => cat.type === "income" || cat.type === "both");
 
-  // Export functionality state
-  const [exportLoading, setExportLoading] = useState(false);
+// Export functionality state (moved to top of component)
 
   // Handle transaction export
   const handleExportTransactions = async () => {
