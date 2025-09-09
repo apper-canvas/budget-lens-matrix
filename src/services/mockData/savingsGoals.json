@@ -1,0 +1,34 @@
+[
+  {
+    "Id": 1,
+    "name": "Emergency Fund",
+    "targetAmount": 5000.00,
+    "currentAmount": 1200.00,
+    "targetDate": "2024-12-31T00:00:00.000Z",
+    "description": "Build a 6-month emergency fund"
+  },
+  {
+    "Id": 2,
+    "name": "Vacation Fund",
+    "targetAmount": 2500.00,
+    "currentAmount": 650.00,
+    "targetDate": "2024-07-01T00:00:00.000Z",
+    "description": "Summer vacation to Europe"
+  },
+  {
+    "Id": 3,
+    "name": "New Car",
+    "targetAmount": 15000.00,
+    "currentAmount": 3200.00,
+    "targetDate": "2025-06-01T00:00:00.000Z",
+    "description": "Down payment for a new car"
+  },
+  {
+    "Id": 4,
+    "name": "Home Improvement",
+    "targetAmount": 8000.00,
+    "currentAmount": 2800.00,
+    "targetDate": "2024-10-01T00:00:00.000Z",
+    "description": "Kitchen renovation project"
+  }
+]

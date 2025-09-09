@@ -1,0 +1,107 @@
+[
+  {
+    "Id": 1,
+    "name": "Groceries",
+    "color": "#10b981",
+    "icon": "ShoppingCart",
+    "type": "expense"
+  },
+  {
+    "Id": 2,
+    "name": "Gas",
+    "color": "#f59e0b",
+    "icon": "Car",
+    "type": "expense"
+  },
+  {
+    "Id": 3,
+    "name": "Rent",
+    "color": "#3b82f6",
+    "icon": "Home",
+    "type": "expense"
+  },
+  {
+    "Id": 4,
+    "name": "Utilities",
+    "color": "#8b5cf6",
+    "icon": "Zap",
+    "type": "expense"
+  },
+  {
+    "Id": 5,
+    "name": "Entertainment",
+    "color": "#ec4899",
+    "icon": "Music",
+    "type": "expense"
+  },
+  {
+    "Id": 6,
+    "name": "Dining Out",
+    "color": "#f97316",
+    "icon": "UtensilsCrossed",
+    "type": "expense"
+  },
+  {
+    "Id": 7,
+    "name": "Health",
+    "color": "#06b6d4",
+    "icon": "Heart",
+    "type": "expense"
+  },
+  {
+    "Id": 8,
+    "name": "Shopping",
+    "color": "#84cc16",
+    "icon": "ShoppingBag",
+    "type": "expense"
+  },
+  {
+    "Id": 9,
+    "name": "Transport",
+    "color": "#64748b",
+    "icon": "Train",
+    "type": "expense"
+  },
+  {
+    "Id": 10,
+    "name": "Education",
+    "color": "#dc2626",
+    "icon": "BookOpen",
+    "type": "expense"
+  },
+  {
+    "Id": 11,
+    "name": "Salary",
+    "color": "#059669",
+    "icon": "Briefcase",
+    "type": "income"
+  },
+  {
+    "Id": 12,
+    "name": "Freelance",
+    "color": "#0ea5e9",
+    "icon": "Monitor",
+    "type": "income"
+  },
+  {
+    "Id": 13,
+    "name": "Investment",
+    "color": "#7c3aed",
+    "icon": "TrendingUp",
+    "type": "income"
+  },
+  {
+    "Id": 14,
+    "name": "Gift",
+    "color": "#db2777",
+    "icon": "Gift",
+    "type": "both"
+  },
+  {
+    "Id": 15,
+    "name": "Other",
+    "color": "#6b7280",
+    "icon": "MoreHorizontal",
+    "type": "both"
+  }
+]

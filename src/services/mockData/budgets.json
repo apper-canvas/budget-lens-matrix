@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 1,
+    "categoryId": 1,
+    "monthlyLimit": 400.00,
+    "month": "2024-01",
+    "spent": 0
+  },
+  {
+    "Id": 2,
+    "categoryId": 2,
+    "monthlyLimit": 150.00,
+    "month": "2024-01",
+    "spent": 0
+  },
+  {
+    "Id": 3,
+    "categoryId": 3,
+    "monthlyLimit": 1200.00,
+    "month": "2024-01",
+    "spent": 0
+  },
+  {
+    "Id": 4,
+    "categoryId": 4,
+    "monthlyLimit": 200.00,
+    "month": "2024-01",
+    "spent": 0
+  },
+  {
+    "Id": 5,
+    "categoryId": 5,
+    "monthlyLimit": 100.00,
+    "month": "2024-01",
+    "spent": 0
+  },
+  {
+    "Id": 6,
+    "categoryId": 6,
+    "monthlyLimit": 300.00,
+    "month": "2024-01",
+    "spent": 0
+  }
+]

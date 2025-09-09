@@ -1,0 +1,92 @@
+[
+  {
+    "Id": 1,
+    "amount": 3500.00,
+    "category": "Salary",
+    "type": "income",
+    "date": "2024-01-01T00:00:00.000Z",
+    "description": "Monthly salary",
+    "createdAt": "2024-01-01T08:00:00.000Z"
+  },
+  {
+    "Id": 2,
+    "amount": 850.50,
+    "category": "Groceries",
+    "type": "expense",
+    "date": "2024-01-02T00:00:00.000Z",
+    "description": "Weekly grocery shopping",
+    "createdAt": "2024-01-02T10:30:00.000Z"
+  },
+  {
+    "Id": 3,
+    "amount": 45.20,
+    "category": "Gas",
+    "type": "expense",
+    "date": "2024-01-03T00:00:00.000Z",
+    "description": "Gas station fill-up",
+    "createdAt": "2024-01-03T16:45:00.000Z"
+  },
+  {
+    "Id": 4,
+    "amount": 1200.00,
+    "category": "Rent",
+    "type": "expense",
+    "date": "2024-01-05T00:00:00.000Z",
+    "description": "Monthly rent payment",
+    "createdAt": "2024-01-05T09:00:00.000Z"
+  },
+  {
+    "Id": 5,
+    "amount": 89.99,
+    "category": "Utilities",
+    "type": "expense",
+    "date": "2024-01-07T00:00:00.000Z",
+    "description": "Electric bill",
+    "createdAt": "2024-01-07T14:20:00.000Z"
+  },
+  {
+    "Id": 6,
+    "amount": 25.50,
+    "category": "Entertainment",
+    "type": "expense",
+    "date": "2024-01-10T00:00:00.000Z",
+    "description": "Movie tickets",
+    "createdAt": "2024-01-10T19:15:00.000Z"
+  },
+  {
+    "Id": 7,
+    "amount": 500.00,
+    "category": "Freelance",
+    "type": "income",
+    "date": "2024-01-12T00:00:00.000Z",
+    "description": "Freelance project payment",
+    "createdAt": "2024-01-12T11:30:00.000Z"
+  },
+  {
+    "Id": 8,
+    "amount": 75.30,
+    "category": "Dining Out",
+    "type": "expense",
+    "date": "2024-01-15T00:00:00.000Z",
+    "description": "Dinner with friends",
+    "createdAt": "2024-01-15T20:45:00.000Z"
+  },
+  {
+    "Id": 9,
+    "amount": 35.00,
+    "category": "Gas",
+    "type": "expense",
+    "date": "2024-01-18T00:00:00.000Z",
+    "description": "Gas for weekend trip",
+    "createdAt": "2024-01-18T08:15:00.000Z"
+  },
+  {
+    "Id": 10,
+    "amount": 120.00,
+    "category": "Health",
+    "type": "expense",
+    "date": "2024-01-20T00:00:00.000Z",
+    "description": "Doctor visit copay",
+    "createdAt": "2024-01-20T15:00:00.000Z"
+  }
+]
